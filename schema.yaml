@@ -1,0 +1,18 @@
+COLUMNS:
+  CPU_Load: float64
+  Memory_Usage: float64
+  Disk_Usage: float64
+  Network_IO : float64
+  Server_Load: float64
+  Power_Consumption: float64
+  Temperature: float64
+  Num_of_Running_Processes: int64
+  Storage_Capacity: float64
+  Server_Uptime: float64
+  Status: int64
+  Server_ID: str
+  Server_Dependency: str
+
+
+TARGET_COLUMN:
+  name: Status
