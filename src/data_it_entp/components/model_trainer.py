@@ -17,13 +17,13 @@ class ModelTrainer:
 
 
         train_x = train_data[features]
-        print(f"train x={train_x}")
+        # print(f"train x={train_x}")
         test_x = test_data[features]
-        print(f"test x={test_x}")
+        # print(f"test x={test_x}")
         train_y = train_data[[self.config.target_column]]
-        print(train_y)
+        # print(train_y)
         test_y = test_data[[self.config.target_column]]
-        print(test_y)
+        # print(test_y)
 
 
         lr = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
