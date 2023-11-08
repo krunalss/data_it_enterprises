@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Enterprise Resource Management</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="static/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Home</a>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="text-center">IT Enterprise Resource Management</h1>
+    <p class="text-center">Introduction text goes here</p>
+
+    <div class="card mx-auto mt-4" style="width: 50%;">
+        <div class="card-body" style="background-color: #add8e6;">
+            <h5 class="card-title text-center">Please Fill The Information</h5>
+            <form class="form-detail" action="/predict" method="post">
+                <div class="form-group">
+                    <label for="increasedLoad">Increased load in "x" times:</label>
+                    <input type="text" class="form-control" id="increasedLoad" name="increased_load" placeholder="Enter load increase">
+                </div>
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="https://www.linkedin.com/in/krunalss/" class="btn btn-link">LinkedIn Profile</a>
+        <a href="https://github.com/krunalss" class="btn btn-link">GitHub Profile</a>
+    </div>
+</div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

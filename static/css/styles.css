@@ -1,0 +1,16 @@
+body {
+  background-color: #87CEEB; /* pastel sky blue background */
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  background-color: #00008B; /* pastel dark blue color */
+  color: white;
+}
+
+.btn-primary {
+  background-color: #FF6347; /* red color for the predict button */
+}
