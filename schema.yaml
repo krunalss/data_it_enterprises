@@ -9,10 +9,9 @@ COLUMNS:
   Num_of_Running_Processes: int64
   Storage_Capacity: float64
   Server_Uptime: float64
-  Status: int64
+  Status: float64
   Server_ID: str
   Server_Dependency: str
-
 
 TARGET_COLUMN:
   name: Status
