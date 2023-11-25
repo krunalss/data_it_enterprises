@@ -14,7 +14,7 @@ def predict(input_data):
     """
     # Assuming model expects a list of features
     incresed_load =float(input_data[0])
-    df = pd.read_csv('artifacts/data_ingestion/allmetrics.csv')      
+    df = pd.read_csv('static/current_it_data/allmetrics.csv')      
     features = ['CPU_Load', 'Memory_Usage', 'Disk_Usage']
 
 
@@ -152,7 +152,7 @@ def pred_page():
     # Input fields for the user to enter data
     # Adjust these inputs based on what your model expects
     #data=pd.read_csv("artifacts/data_ingestion/allmetrics.csv")
-    csv_file_path=('artifacts/data_ingestion/allmetrics.csv')
+    csv_file_path=('static/current_it_data/allmetrics.csv')
     fig = plot_metric_distribution(csv_file_path)
     st.pyplot(fig)
     
