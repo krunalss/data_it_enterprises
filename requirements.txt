@@ -4,7 +4,7 @@ notebook
 numpy
 scikit-learn
 matplotlib
-python-box==7.0
+python-box==6.0.2
 pyYAML
 tqdm
 ensure==1.0.2
