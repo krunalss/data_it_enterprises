@@ -102,6 +102,7 @@ def navigate(page):
     st.session_state['current_page'] = page
 
 def home_page():
+    os.system("python main.py")
     about_text="""
         In modern enterprise, the <b>complexity of IT systems</b> based on interdependency between 
         several components, makes it <b>extremely difficult</b> to explain behavior and <b>predict the outcome</b> 
@@ -163,7 +164,9 @@ def pred_page():
     #input_data.append(st.number_input('Enter second feature value', value=0.0))
     # Add more inputs as needed
 
-    # Predict button
+    #if st.button('Train',help="First lets Tarin the model on Current Data"):
+    #    st.write('Why hello there')
+        # Predict button
     if st.button('Predict'):
         result = predict(input_data)
         st.write(f'The predicted output is: {result}')
@@ -193,4 +196,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
