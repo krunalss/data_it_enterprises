@@ -1,6 +1,6 @@
-from data_it_entp.config.configuration import ConfigurationManager
-from data_it_entp.components.model_evaluation import ModelEvaluation
-from data_it_entp import logger
+from src.data_it_entp.config.configuration import ConfigurationManager
+from src.data_it_entp.components.model_evaluation import ModelEvaluation
+from src.data_it_entp import logger
 
 
 STAGE_NAME = "Model evaluation stage"

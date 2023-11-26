@@ -6,8 +6,8 @@ import mlflow
 import mlflow.sklearn
 import numpy as np
 import joblib
-from data_it_entp.config.configuration import ModelEvaluationConfig
-from data_it_entp.utils.common import save_json
+from src.data_it_entp.config.configuration import ModelEvaluationConfig
+from src.data_it_entp.utils.common import save_json
 from pathlib import Path
 
 class ModelEvaluation:

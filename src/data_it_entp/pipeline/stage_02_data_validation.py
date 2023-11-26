@@ -1,7 +1,7 @@
 
-from data_it_entp import logger
-from data_it_entp.config.configuration import ConfigurationManager
-from data_it_entp.components.data_validation import DataValiadtion
+from src.data_it_entp import logger
+from src.data_it_entp.config.configuration import ConfigurationManager
+from src.data_it_entp.components.data_validation import DataValiadtion
 
 STAGE_NAME = "Data Validation stage"
 

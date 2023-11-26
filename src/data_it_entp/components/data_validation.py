@@ -1,6 +1,6 @@
 import os
-from data_it_entp import logger
-from data_it_entp.config.configuration import DataValidationConfig
+from src.data_it_entp import logger
+from src.data_it_entp.config.configuration import DataValidationConfig
 import pandas as pd
 
 class DataValiadtion:
