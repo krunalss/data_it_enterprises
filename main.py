@@ -1,4 +1,4 @@
-from data_it_entp import logger
+from src.data_it_entp import logger
 from data_it_entp.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from data_it_entp.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from data_it_entp.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
