@@ -1,9 +1,9 @@
 from src.data_it_entp import logger
-from data_it_entp.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
-from data_it_entp.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
-from data_it_entp.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
-from data_it_entp.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
-from data_it_entp.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
+from src.data_it_entp.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from src.data_it_entp.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
+from src.data_it_entp.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
+from src.data_it_entp.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
+from src.data_it_entp.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
 
 
 STAGE_NAME = "Data Ingestion stage"
