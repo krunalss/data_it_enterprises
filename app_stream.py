@@ -57,7 +57,7 @@ def plot_metric_distribution(csv_file_path):
     status_count=data['Status_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
 
     # Stacked bar plot
-    categories = ['CPU Load', 'Memory Usage', 'Disk Usage' ,"Status"]
+    categories = ['CPU Load', 'Memory Usage', 'Disk Usage' ,"Query/Response Time"]
     values = np.array([cpu_counts, memory_counts, disk_counts,status_count])
 
     fig, ax = plt.subplots(figsize=(10, 6))
