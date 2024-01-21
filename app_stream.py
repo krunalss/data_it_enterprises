@@ -48,15 +48,17 @@ def plot_metric_distribution(csv_file_path):
     data['CPU_Load_Category'] = data['CPU_Load'].apply(categorize_values)
     data['Memory_Usage_Category'] = data['Memory_Usage'].apply(categorize_values)
     data['Disk_Usage_Category'] = data['Disk_Usage'].apply(categorize_values)
+    data['Status_Category'] = data['Status_Usage'].apply(categorize_values)
 
     # Calculate the counts for each category
     cpu_counts = data['CPU_Load_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
     memory_counts = data['Memory_Usage_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
     disk_counts = data['Disk_Usage_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
+    status_count=data['Status_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
 
     # Stacked bar plot
-    categories = ['CPU Load', 'Memory Usage', 'Disk Usage']
-    values = np.array([cpu_counts, memory_counts, disk_counts])
+    categories = ['CPU Load', 'Memory Usage', 'Disk Usage' ,"Status"]
+    values = np.array([cpu_counts, memory_counts, disk_counts,status_count])
 
     fig, ax = plt.subplots(figsize=(10, 6))
 
