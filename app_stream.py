@@ -28,7 +28,10 @@ def predict(input_data):
     #print(my_result.head())
     impacted_servers = (my_result.iloc[:, 0] > 90).sum()
     print(f"impacted_servers={impacted_servers}")
-    
+    increased_load_data=data.merge(impacted_servers)
+
+    increased_load_data.to_csv('merged_data.csv', index=False)
+
     return impacted_servers
 
 def plot_metric_distribution(csv_file_path):
