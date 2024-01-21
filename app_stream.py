@@ -28,7 +28,7 @@ def predict(input_data):
     #print(my_result.head())
     impacted_servers = (my_result.iloc[:, 0] > 90).sum()
     print(f"impacted_servers={impacted_servers}")
-    increased_load_data=pd.concat([data, impacted_servers], axis=1)
+    increased_load_data=pd.concat([data, my_result], axis=1)
 
     increased_load_data.to_csv('merged_data.csv', index=False)
 
