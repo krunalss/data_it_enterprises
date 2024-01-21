@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "src"
+name = "data_it_entp"
 version = "0.1.0"
 description = ""
 authors = ["Krunal Shambharkar <krunalss@outlook.com>"]
