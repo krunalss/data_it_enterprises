@@ -1,8 +1,8 @@
 import os
-from src.data_it_entp import logger
+from data_it_entp import logger
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from src.data_it_entp.config.configuration import DataTransformationConfig
+from data_it_entp.config.configuration import DataTransformationConfig
 
 class DataTransformation:
     def __init__(self, config: DataTransformationConfig):

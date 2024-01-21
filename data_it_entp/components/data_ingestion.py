@@ -1,9 +1,9 @@
 import os
 import urllib.request as request
 import zipfile
-from src.data_it_entp import logger
-from src.data_it_entp.utils.common import get_size
-from src.data_it_entp.config.configuration import DataIngestionConfig
+from data_it_entp import logger
+from data_it_entp.utils.common import get_size
+from data_it_entp.config.configuration import DataIngestionConfig
 from pathlib import Path 
 
 class DataIngestion:

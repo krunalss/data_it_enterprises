@@ -1,6 +1,6 @@
-from src.data_it_entp.config.configuration import ConfigurationManager
-from src.data_it_entp.components.model_trainer import ModelTrainer
-from src.data_it_entp import logger
+from data_it_entp.config.configuration import ConfigurationManager
+from data_it_entp.components.model_trainer import ModelTrainer
+from data_it_entp import logger
 
 
 

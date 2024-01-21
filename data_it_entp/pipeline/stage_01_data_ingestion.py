@@ -1,6 +1,6 @@
-from src.data_it_entp.config.configuration import ConfigurationManager
-from src.data_it_entp.components.data_ingestion import DataIngestion
-from src.data_it_entp import logger
+from data_it_entp.config.configuration import ConfigurationManager
+from data_it_entp.components.data_ingestion import DataIngestion
+from data_it_entp import logger
 
 STAGE_NAME = "Data Ingestion stage"
 

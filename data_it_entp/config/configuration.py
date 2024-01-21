@@ -1,6 +1,6 @@
-from src.data_it_entp.constants import *
-from src.data_it_entp.utils.common import read_yaml,create_directories
-from src.data_it_entp.entity.config_entity import (DataIngestionConfig,DataValidationConfig,
+from data_it_entp.constants import *
+from data_it_entp.utils.common import read_yaml,create_directories
+from data_it_entp.entity.config_entity import (DataIngestionConfig,DataValidationConfig,
                                                ModelTrainerConfig,DataTransformationConfig,
                                                ModelEvaluationConfig)
 

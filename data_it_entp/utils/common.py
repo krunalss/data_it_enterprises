@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src.data_it_entp import logger
+from data_it_entp import logger
 import json
 import joblib
 from ensure import ensure_annotations

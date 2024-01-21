@@ -5,7 +5,7 @@ from data_it_entp.pipeline.stage_06_prediction import PredictionPipeline
 from data_it_entp.components.model_evaluation import ModelEvaluation
 import streamlit as st 
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 def predict(input_data):
     """ 
