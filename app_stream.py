@@ -184,12 +184,12 @@ def pred_page():
         # Predict button
     if st.button('Predict'):
         result = predict(input_data)
-        st.markdown(f"<h2 style='text-align: center'>Impacted servers count will be: {result}</h1>", unsafe_allow_html=True)
         csv_file_path_result=('static/predicted_data/merged_data.csv')
         fig = plot_metric_distribution(csv_file_path_result)
+        st.subheader("State of IT enterprise post increased of load")
         st.pyplot(fig)
-
-
+        st.markdown(f"<h2 style='text-align: center'>Impacted servers count will be: {result}</h1>", unsafe_allow_html=True)
+        
 
 def main():
     # Navigation bar
