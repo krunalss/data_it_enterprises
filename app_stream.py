@@ -174,7 +174,7 @@ def pred_page():
     
     
     input_data = []
-    st.markdown(f"<h3 style='text-align: center'> Enter how much times load will incresed in say in Black friday SALE/Great Amazon SALE </h1>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center'> Enter how much times load will incresed (for example onn Black friday SALE/Great Amazon SALE </h1>", unsafe_allow_html=True)
     input_data.append(st.number_input('2x,3x,4x', value=1))
     #input_data.append(st.number_input('Enter second feature value', value=0.0))
     # Add more inputs as needed
