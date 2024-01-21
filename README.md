@@ -1,5 +1,9 @@
 # SysForecast: What-If Analysis Tool for IT Enterprises
 
+## Live Application
+The application is deployed and can be accessed on Streamlit Cloud. Experience the live application here:
+[Streamlit App](https://dataitenterprises-whatif.streamlit.app/)
+
 ## Problem Statement
 In the complex landscape of modern IT systems, understanding and predicting the outcomes of changes in the infrastructure poses a significant challenge. The interdependencies among various components make it difficult to anticipate the effects of workload fluctuations or modifications, often leading to inefficiency and high operational costs. SysForecast aims to address this issue by offering a 'what-if' analysis tool, enabling system administrators to model potential changes and assess their impact on system performance and resource utilization. This tool is designed to facilitate informed decision-making and reduce risks in dynamic IT environments.
 
