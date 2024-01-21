@@ -21,16 +21,24 @@ def predict(input_data):
     data =df[features]*incresed_load
     data =data.clip(upper=100)
     row_count=len(df)
-    data = np.array(data).reshape(row_count, 3)
+    #data = np.array(data).reshape(row_count, 3)
+    
     obj = PredictionPipeline()
     predict = obj.predict(data)
+    
     my_result=pd.DataFrame(predict)
+    #my_result_df = pd.DataFrame(my_result)
+    my_result_df = pd.DataFrame(predict, columns=['Status'])
+
     #print(my_result.head())
     impacted_servers = (my_result.iloc[:, 0] > 90).sum()
     print(f"impacted_servers={impacted_servers}")
-    increased_load_data=pd.concat([data, my_result], axis=1)
-
-    increased_load_data.to_csv('merged_data.csv', index=False)
+    
+    increased_load_data=pd.concat([data, my_result_df], axis=1)
+    
+    directory = 'static/predicted_data'
+    file_path = os.path.join(directory, 'merged_data.csv')
+    increased_load_data.to_csv(file_path, index=False)
 
     return impacted_servers
 
@@ -101,13 +109,14 @@ def plot_metric_distribution(csv_file_path):
 
 # Streamlit webpage title
 if 'current_page' not in st.session_state:
-    st.session_state['current_page'] = 'home'
+    st.session_state['current_page'] = 'prediction_project'
+    os.system("python main.py")
 
 def navigate(page):
     st.session_state['current_page'] = page
 
 def home_page():
-    os.system("python main.py")
+    
     about_text="""
         In modern enterprise, the <b>complexity of IT systems</b> based on interdependency between 
         several components, makes it <b>extremely difficult</b> to explain behavior and <b>predict the outcome</b> 
@@ -150,7 +159,7 @@ the potential <b>impact</b> of changes in the IT infrastructure.<br><br>"""
     st.markdown(f"<div style='text-align: justify;'>{approch_text}</div>", unsafe_allow_html=True)
     st.subheader("Methodology:")
     st.markdown(f"<div style='text-align: justify;'>{methodology_text}</div>", unsafe_allow_html=True)
-    #st.sidebar.button('Predictions')
+    
     
 def pred_page():
     st.title('Predictions')
@@ -165,7 +174,8 @@ def pred_page():
     
     
     input_data = []
-    input_data.append(st.number_input('Enter first feature value', value=0.0))
+    st.markdown(f"<h3 style='text-align: center'> Enter how much times load will incresed in say in Black friday SALE/Great Amazon SALE </h1>", unsafe_allow_html=True)
+    input_data.append(st.number_input('2x,3x,4x', value=1))
     #input_data.append(st.number_input('Enter second feature value', value=0.0))
     # Add more inputs as needed
 
@@ -174,7 +184,12 @@ def pred_page():
         # Predict button
     if st.button('Predict'):
         result = predict(input_data)
-        st.write(f'The predicted output is: {result}')
+        st.markdown(f"<h2 style='text-align: center'>Impacted servers count will be: {result}</h1>", unsafe_allow_html=True)
+        csv_file_path_result=('static/predicted_data/merged_data.csv')
+        fig = plot_metric_distribution(csv_file_path_result)
+        st.pyplot(fig)
+
+
 
 def main():
     # Navigation bar
@@ -186,7 +201,7 @@ def main():
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        if st.button("About"):
+        if st.button("About the Project"):
             navigate('home')
 
     with col2:
