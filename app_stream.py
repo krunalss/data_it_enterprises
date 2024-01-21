@@ -48,7 +48,7 @@ def plot_metric_distribution(csv_file_path):
     data['CPU_Load_Category'] = data['CPU_Load'].apply(categorize_values)
     data['Memory_Usage_Category'] = data['Memory_Usage'].apply(categorize_values)
     data['Disk_Usage_Category'] = data['Disk_Usage'].apply(categorize_values)
-    data['Status_Category'] = data['Status_Usage'].apply(categorize_values)
+    data['Status_Category'] = data['Status'].apply(categorize_values)
 
     # Calculate the counts for each category
     cpu_counts = data['CPU_Load_Category'].value_counts().reindex(['Low (<=25)', 'Normal (26-75)', 'High (>75)']).fillna(0)
