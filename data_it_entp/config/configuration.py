@@ -63,7 +63,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params.ElasticNet
+        params = self.params.Xgboost
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
@@ -73,17 +73,24 @@ class ConfigurationManager:
             train_data_path = config.train_data_path,
             test_data_path = config.test_data_path,
             model_name = config.model_name,
+            #alpha = params.alpha,
+            #l1_ratio = params.l1_ratio,
+            target_column = schema.name,
+            objective= params.objective,
+            colsample_bytree =params.colsample_bytree,
+            learning_rate= params.learning_rate,
+            max_depth= params.max_depth,
             alpha = params.alpha,
-            l1_ratio = params.l1_ratio,
-            target_column = schema.name
-            
+            n_estimators = params.n_estimators            
         )
 
         return model_trainer_config
+
+        
     
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
-        params = self.params.ElasticNet
+        params = self.params.Xgboost
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])

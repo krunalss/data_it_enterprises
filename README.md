@@ -3,6 +3,7 @@
 ## Live Application
 The application is deployed and can be accessed on Streamlit Cloud. Experience the live application here:
 [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)
+Also for [MlFlow experimentation](https://dagshub.com/krunalss/data_it_enterprises.mlflow/)
 
 ## Problem Statement
 In the complex landscape of modern IT systems, understanding and predicting the outcomes of changes in the infrastructure poses a significant challenge. The interdependencies among various components make it difficult to anticipate the effects of workload fluctuations or modifications, often leading to inefficiency and high operational costs. SysForecast aims to address this issue by offering a 'what-if' analysis tool, enabling system administrators to model potential changes and assess their impact on system performance and resource utilization. This tool is designed to facilitate informed decision-making and reduce risks in dynamic IT environments.
@@ -13,7 +14,8 @@ SysForecast integrates advanced machine learning algorithms with Elasticsearch t
 ## Methodology
 The SysForecast project follows a sequential pipeline comprising the following stages:
 
-1. **Data Ingestion:** Utilizing Elasticsearch for its full-text search capabilities and speed, allowing efficient handling of large volumes of IT system data.
+1. **Data Ingestion:** 
+The Data Ingestion pipeline in this code efficiently handles data acquisition and preparation. It automates the downloading of data from a specified API, checking for pre-existing files to avoid redundancy, and then seamlessly extracts the contents of zip files into a designated directory, preparing the data for subsequent processing stages.
 
 2. **Data Validation:** Ensuring the quality and consistency of ingested data against predefined schemas, which is crucial for reliable predictions.
 
@@ -22,6 +24,13 @@ The SysForecast project follows a sequential pipeline comprising the following s
 4. **Model Training:** Training two machine learning models—SVM and XGBoost. SVM excels in high-dimensional spaces, while XGBoost is a gradient boosting framework known for its performance in various competitions.
 
 5. **Model Evaluation:** Evaluating model performance using metrics such as accuracy, precision, recall, and F1-score to ensure reliability in predictions.
+
+Paramters for XGBoost
+colsample_bytree: The subsample ratio of columns when constructing each tree.
+learning_rate: Step size shrinkage used to prevent overfitting.
+max_depth: Maximum depth of a tree.
+alpha: L1 regularization term on weights.
+n_estimators: Number of trees you want to build.
 
 6. **Prediction:** Using the trained models to predict the outcomes of various what-if scenarios, assisting system administrators in making informed decisions.
 
@@ -78,3 +87,32 @@ Please make sure to update tests as appropriate.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+### Appendix I
+Hyperparameter Tunning
+
+#### objective:
+The choice depends on the type of problem:
+For regression tasks: 'reg:squarederror', 'reg:pseudohubererror'.
+For binary classification: 'binary:logistic', 'binary:hinge'.
+For multiclass classification: 'multi:softmax', 'multi:softprob'.
+
+#### colsample_bytree:
+Typical values range from 0.3 to 0.8.
+This parameter specifies the fraction of features (columns) to use for each tree. A higher value means more features will be considered, potentially increasing the model's complexity and risk of overfitting.
+
+#### max_depth:
+Common values are between 3 and 10.
+This parameter controls the maximum depth of each tree. Deeper trees can model more complex patterns but might lead to overfitting. Shallower trees are faster to train and can help in preventing overfitting but might underfit.
+
+#### alpha (L1 regularization term):
+Typical values are 0, 0.001, 0.01, 0.1, 1, 10.
+Regularization can help prevent overfitting. A value of 0 means no regularization. Higher values mean stronger regularization, potentially leading to simpler models (but too high a value might cause underfitting).
+
+#### n_estimators (number of trees):
+Common values range from 100 to 1000.
+This determines the number of trees in the ensemble. More trees can increase model complexity and predictive power, but the gains might plateau after a certain number, and too many trees can increase the risk of overfitting.
+
+#### learning_rate:
+Typical values for the learning rate in XGBoost range from 0.01 to 0.3.
+The learning rate, sometimes referred to as eta in XGBoost, controls the step size at each iteration while moving toward a minimum of the loss function. A smaller learning rate requires more boosting rounds (trees) to achieve the same reduction in residual error as a larger learning rate, but can often lead to a more accurate model.

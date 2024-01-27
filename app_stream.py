@@ -128,9 +128,9 @@ def home_page():
         <b>informed decision-making</b> and reducing risks in <b>dynamic IT environments</b>.<br>"""
 
     approch_text="""This project, <b>"SysForecast"</b>, employs a sophisticated approach by integrating
-      machine learning algorithms with <b>Elasticsearch</b> to predict the impact of <b>hypothetical changes</b>
+      machine learning algorithms with <b>state of art MLOps practices</b> to predict the impact of <b>hypothetical changes</b>
         in IT enterprise systems. The project is structured into a <b>modular pipeline</b>, ensuring 
-        <b>scalability</b> and <b>maintainability</b>. I leverage the robustness of Elasticsearch for data 
+        <b>scalability</b> and <b>maintainability</b>. I leverage the robustness of API calling for data 
         ingestion and <b>XGBoost and SVM</b> (Support Vector Machines) for predictive modeling, 
         facilitating an in-depth <b>what-if analysis</b><br>.
         """
@@ -174,7 +174,7 @@ def pred_page():
     
     
     input_data = []
-    st.markdown(f"<h3 style='text-align: center'> Enter how much times load will incresed (for example onn Black friday SALE/Great Amazon SALE </h1>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center'> Enter how much times load will incresed (for example on Black friday SALE/Great Amazon SALE )</h1>", unsafe_allow_html=True)
     input_data.append(st.number_input('2x,3x,4x', value=1))
     #input_data.append(st.number_input('Enter second feature value', value=0.0))
     # Add more inputs as needed
