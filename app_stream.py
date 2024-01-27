@@ -110,7 +110,7 @@ def plot_metric_distribution(csv_file_path):
 # Streamlit webpage title
 if 'current_page' not in st.session_state:
     st.session_state['current_page'] = 'prediction_project'
-    os.system("python main.py")
+    #os.system("python main.py")
 
 def navigate(page):
     st.session_state['current_page'] = page
@@ -163,7 +163,7 @@ the potential <b>impact</b> of changes in the IT infrastructure.<br><br>"""
     
 def pred_page():
     st.title('Predictions')
-    st.subheader("Current State of IT enterprise:")
+    st.subheader("Current State of IT enterprise(5000 server):")
     # Input fields for the user to enter data
     # Adjust these inputs based on what your model expects
     #data=pd.read_csv("artifacts/data_ingestion/allmetrics.csv")
@@ -188,7 +188,7 @@ def pred_page():
         fig = plot_metric_distribution(csv_file_path_result)
         st.subheader("State of IT enterprise post increased of load")
         st.pyplot(fig)
-        st.markdown(f"<h2 style='text-align: center'>Impacted servers count will be: {result}</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align: center'>Impacted servers count will be: {result}/5000 </h1>", unsafe_allow_html=True)
         
 
 def main():
