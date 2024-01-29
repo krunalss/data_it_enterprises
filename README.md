@@ -1,15 +1,16 @@
 # SysForecast: What-If Analysis Tool for IT Enterprises
 
 ## Live Application
-The application is deployed and can be accessed on Streamlit Cloud. Experience the live application here:
-[Streamlit App](https://dataitenterprises-whatif.streamlit.app/)
+The application is deployed and can be accessed on Streamlit Cloud. 
+Experience the live application here: [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)  
+
 Also for [MlFlow experimentation](https://dagshub.com/krunalss/data_it_enterprises.mlflow/)
 
 ## Problem Statement
-In the complex landscape of modern IT systems, understanding and predicting the outcomes of changes in the infrastructure poses a significant challenge. The interdependencies among various components make it difficult to anticipate the effects of workload fluctuations or modifications, often leading to inefficiency and high operational costs. SysForecast aims to address this issue by offering a 'what-if' analysis tool, enabling system administrators to model potential changes and assess their impact on system performance and resource utilization. This tool is designed to facilitate informed decision-making and reduce risks in dynamic IT environments.
+In the complex landscape of modern IT systems, accurately predicting server loads during high-demand periods such as Black Friday sales, Great Amazon Sales, and similar events is a significant challenge. These occasions often lead to unprecedented traffic spikes, causing server overloads and potential system downtimes. The interdependencies among various components in IT infrastructure make it difficult to anticipate the effects of workload fluctuations or modifications, often leading to inefficiency and high operational costs. SysForecast addresses these challenges by offering a 'what-if' analysis tool, enabling system administrators to model potential changes and assess their impact on system performance, resource utilization, and server load during peak times. This tool is designed to facilitate informed decision-making and reduce risks in dynamic IT environments.
 
 ## Approach
-SysForecast integrates advanced machine learning algorithms with Elasticsearch to predict the impact of hypothetical changes in IT systems. The project is structured into a modular pipeline, ensuring scalability and maintainability. We leverage the robustness of Elasticsearch for efficient data ingestion and use XGBoost and SVM (Support Vector Machines) for predictive modeling. This combination allows for a comprehensive what-if analysis, providing insights into potential system alterations.
+SysForecast uses XGBoost, a powerful machine learning algorithm, to predict the impact of hypothetical changes in IT systems.Our approach centers on MLflow, used for experiment tracking, model management, and facilitating reproducibility in the machine learning workflow.The project is structured into a modular pipeline, ensuring scalability and maintainability. With XGBoost's analytical prowess and MLflow's lifecycle management, SysForecast provides detailed what-if analyses, aiding in strategic decision-making during critical events like high-demand sales periods. This combination ensures scalability, maintainability, and optimized performance in dynamic IT environments.
 
 ## Methodology
 The SysForecast project follows a sequential pipeline comprising the following stages:
@@ -21,16 +22,9 @@ The Data Ingestion pipeline in this code efficiently handles data acquisition an
 
 3. **Data Transformation:** Cleaning and converting raw data into a format suitable for machine learning algorithms.
 
-4. **Model Training:** Training two machine learning models—SVM and XGBoost. SVM excels in high-dimensional spaces, while XGBoost is a gradient boosting framework known for its performance in various competitions.
+4. **Model Training:** Utilizes XGBoost for training the predictive model, renowned for its performance and accuracy.
 
-5. **Model Evaluation:** Evaluating model performance using metrics such as accuracy, precision, recall, and F1-score to ensure reliability in predictions.
-
-Paramters for XGBoost
-colsample_bytree: The subsample ratio of columns when constructing each tree.
-learning_rate: Step size shrinkage used to prevent overfitting.
-max_depth: Maximum depth of a tree.
-alpha: L1 regularization term on weights.
-n_estimators: Number of trees you want to build.
+5. **Model Evaluation:** Evaluates model performance using metrics such as Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2). RMSE provides a measure of how accurately the model predicts the response, MAE gives an average magnitude of errors in a set of predictions, without considering their direction. R2, on the other hand, provides a measure of how well observed outcomes are replicated by the model, based on the proportion of total variation of outcomes explained by the model.
 
 6. **Prediction:** Using the trained models to predict the outcomes of various what-if scenarios, assisting system administrators in making informed decisions.
 
@@ -39,13 +33,18 @@ Each component of the pipeline is built within a Python-based framework, ensurin
 ## Streamlit Application
 To enhance user interaction, a Streamlit application is developed, enabling users to easily interact with the model and visualize the potential impact of changes in IT infrastructure.
 
+## Containerization with Docker
+SysForecast is containerized using Docker, ensuring that the application runs seamlessly in any environment. The Dockerfile in the repository outlines the steps to create the Docker image, which packages the application along with its dependencies.
+
+## CI/CD with GitHub Actions
+The project utilizes GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD), automating the testing and deployment process. This ensures that every change made to the codebase is automatically tested and deployed to AWS, maintaining the reliability and stability of the application.
+
 ## Repository Structure
 Below is an outline of the key directories and files in this repository, and their purpose:
-
 - `artifacts/`: Contains the output files and data generated by the pipeline, including models, figures, and reports.
 - `config/`: Houses configuration files used throughout the project to maintain consistency in settings and parameters.
 - `data_it_entp/`: Core directory for the project's Python modules, including:
-  - `components/`: Contains the individual Python scripts for each stage of the pipeline:
+   -`components/`: Contains the individual Python scripts for each stage of the pipeline:
     - `data_ingestion.py`: Script for ingesting data into the system.
     - `data_transformation.py`: Handles the transformation of raw data for machine learning.
     - `data_validation.py`: Validates the data against predefined schemas.
@@ -69,10 +68,11 @@ Below is an outline of the key directories and files in this repository, and the
 - `test.py`: Contains the test cases for the project's codebase.
 
 ## Getting Started
-1. To Run locally on falsk, run app.py 
-    python app.py
-2. To Run locally on Streamlit,
-    streamlit run app_stream.py  
+Running Locally using Docker:
+ - Build the Docker image: docker build -t sysforecast .
+ - Run the Docker container: docker run -p 8501:8501 sysforecast
+ - Running Locally on Streamlit:
+streamlit run app_stream.py
 
 ## Contribution
 Your contributions are always welcome! Here's how you can contribute:
@@ -88,8 +88,9 @@ Please make sure to update tests as appropriate.
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-### Appendix I
-Hyperparameter Tunning
+
+## Appendix I
+### Hyperparameter Tunning
 
 #### objective:
 The choice depends on the type of problem:

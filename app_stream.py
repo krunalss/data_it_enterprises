@@ -118,40 +118,56 @@ def navigate(page):
 def home_page():
     
     about_text="""
-        In modern enterprise, the <b>complexity of IT systems</b> based on interdependency between 
-        several components, makes it <b>extremely difficult</b> to explain behavior and <b>predict the outcome</b> 
-        when a modification occurs. System administrators often struggle to 
-        anticipate the effects of <b>workload fluctuations</b> or <b>infrastructure modifications</b>, 
-        leading to inefficiency and high operational costs. This project develops a 
-        <b>'what-if' analysis tool</b> to model potential changes and assess their 
-        impact on system performance and resource utilization, enabling more 
-        <b>informed decision-making</b> and reducing risks in <b>dynamic IT environments</b>.<br>"""
+        In the complex landscape of <b> modern IT systems</b>, accurately predicting 
+        server loads during high-demand periods such as <b>Black Friday sales, Great Amazon Sales, </b>
+        and similar events is a significant challenge. These occasions often lead to unprecedented 
+        traffic spikes, causing <b>server overloads and potential system downtimes.</b> 
+        The interdependencies among various components in IT infrastructure make it difficult to 
+        anticipate the effects of workload fluctuations or modifications, 
+        often leading to inefficiency and high operational costs.<br>
+        <b>SysForecast</b> addresses these challenges by offering a <b>'what-if' analysis tool</b>, 
+        enabling system administrators to model potential changes and assess their impact on 
+        system performance, resource utilization, and server load during peak times. 
+        This tool is designed to facilitate <b>informed decision-making</b> and reduce risks 
+        in dynamic IT environments.<br>"""
 
-    approch_text="""This project, <b>"SysForecast"</b>, employs a sophisticated approach by integrating
-      machine learning algorithms with <b>state of art MLOps practices</b> to predict the impact of <b>hypothetical changes</b>
-        in IT enterprise systems. The project is structured into a <b>modular pipeline</b>, ensuring 
-        <b>scalability</b> and <b>maintainability</b>. I leverage the robustness of API calling for data 
-        ingestion and <b>XGBoost and SVM</b> (Support Vector Machines) for predictive modeling, 
-        facilitating an in-depth <b>what-if analysis</b><br>.
-        """
+    approch_text="""
+    <b>S</b>ysForecast uses <b>XGBoost</b>, a powerful machine learning algorithm, 
+    to predict the impact of hypothetical changes in IT systems. Our approach centers on <b>MLflow</b>, 
+    used for experiment tracking, model management, and facilitating reproducibility in the 
+    machine learning workflow.
+    The project is structured into a <b>modular pipeline</b>, ensuring scalability and maintainability. 
+    With XGBoost's analytical prowess and MLflow's lifecycle management, 
+    SysForecast provides detailed what-if analyses, aiding in strategic decision-making during critical 
+    events like high-demand sales periods.
+    This combination ensures <b>scalability, maintainability, and optimized performance</b> in dynamic IT environments.
+    """
     
-    methodology_text="""The project is organized into a sequential pipeline, outlined as follows:<br>
-<u><b>Data Ingestion:</b>Stage 01</u> begins with data ingestion, utilizing Elasticsearch for its powerful full-text
-search capabilities and speed, allowing us to handle large volumes of IT system data efficiently.<br>
-<u><b>Data Validation:</b>In Stage 02</u>, the ingested data is validated against predefined schemas to ensure quality and consistency, 
-which is crucial for reliable predictions.<br>
-<u><b>Data Transformation:</b>Stage 03</u> involves data transformation where raw data is cleaned and converted into a 
-format suitable for machine learning algorithms.<br>
-<u><b>Model Training:</b>During Stage 04</u>, we train two machine learning models—SVM and XGBoost. 
-SVM is known for its effectiveness in high-dimensional spaces, while XGBoost provides a gradient boosting framework that 
-is widely used in winning Kaggle competitions.<br>
-<u><b>Model Evaluation:</b>In Stage 05</u>, the performance of these models is evaluated using metrics such as 
-accuracy, precision, recall, and F1-score to ensure they can make reliable predictions.<br>
-<u><b>Prediction:</b> Finally, Stage 06</u> leverages the trained models to predict the outcomes of various what-if scenarios, 
-helping system administrators make informed decisions.<br><br>
-The pipeline components are built within a <b>Python-based framework</b>, ensuring a seamless flow from data ingestion to prediction.<br>
-Additionally, a <b>Streamlit</b> application is developed for easy interaction with the model, enabling users to <b>visualize</b> 
-the potential <b>impact</b> of changes in the IT infrastructure.<br><br>"""
+    methodology_text="""TThe SysForecast project follows a sequential pipeline comprising the following stages:
+
+1. **Data Ingestion:** 
+The Data Ingestion pipeline in this code efficiently handles data acquisition and preparation. 
+It automates the downloading of data from a <b>specified API</b>, checking for pre-existing files to avoid redundancy, 
+and then seamlessly extracts the contents of zip files into a designated directory, preparing the data for subsequent processing stages.
+
+2. **Data Validation:** Ensuring the quality and consistency of ingested data against predefined <b>schemas/b>, which is crucial for reliable predictions.
+
+3. **Data Transformation:** Cleaning and converting raw data into a format suitable for machine learning algorithms.
+
+4. **Model Training:** Utilizes <b>XGBoost</b> for training the predictive model, renowned for its performance and accuracy.
+
+5. **Model Evaluation:** Evaluates model performance using metrics such as <b>Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), 
+and R-squared (R2)</b>. RMSE provides a measure of how accurately the model predicts the response, 
+MAE gives an average magnitude of errors in a set of predictions, without considering their direction. 
+R2, on the other hand, provides a measure of how well observed outcomes are replicated by the model, 
+based on the proportion of total variation of outcomes explained by the model.
+
+6. **Prediction:** Using the trained models to predict the outcomes of various what-if scenarios, assisting system administrators in making informed decisions.
+
+Each component of the pipeline is built within a Python-based framework, ensuring a seamless flow from data ingestion to prediction.
+
+## Streamlit Application
+To enhance user interaction, a Streamlit application is developed, enabling users to easily interact with the model and visualize the potential impact of changes in IT infrastructure."""
     
     st.subheader("Problem Statement:")
     st.markdown(f"<div style='text-align: justify;'>{about_text}</div>", unsafe_allow_html=True)
@@ -159,7 +175,8 @@ the potential <b>impact</b> of changes in the IT infrastructure.<br><br>"""
     st.markdown(f"<div style='text-align: justify;'>{approch_text}</div>", unsafe_allow_html=True)
     st.subheader("Methodology:")
     st.markdown(f"<div style='text-align: justify;'>{methodology_text}</div>", unsafe_allow_html=True)
-    
+    if st.button("Lets have a Sample Prediction Here"):
+            navigate('prediction_project')
     
 def pred_page():
     st.title('Predictions')
