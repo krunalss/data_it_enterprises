@@ -2,7 +2,7 @@
 
 ## Live Application
 The application is deployed and can be accessed on Streamlit Cloud. <br>
-Experience the live application here: [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)<br>  
+Experience the live application here: [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)<br>
 Also link for: [MlFlow experimentation](https://dagshub.com/krunalss/data_it_enterprises.mlflow/)
 
 ## Problem Statement
@@ -16,6 +16,7 @@ The SysForecast project follows a sequential pipeline comprising the following s
 
 1. **Data Ingestion:** 
 The Data Ingestion pipeline in this code efficiently handles data acquisition and preparation. It automates the downloading of data from a specified API, checking for pre-existing files to avoid redundancy, and then seamlessly extracts the contents of zip files into a designated directory, preparing the data for subsequent processing stages.
+<code>(The data used in SysForecast is synthetically generated for the purposes of this prototype or Minimum Viable Product (MVP)) </code>
 
 2. **Data Validation:** Ensuring the quality and consistency of ingested data against predefined schemas, which is crucial for reliable predictions.
 
@@ -47,20 +48,20 @@ Below is an outline of the key directories and files in this repository, and the
     - `data_ingestion.py`: Script for ingesting data into the system.
     - `data_transformation.py`: Handles the transformation of raw data for machine learning.
     - `data_validation.py`: Validates the data against predefined schemas.
-    - `model_evaluation.py`: Evaluates the performance of the machine learning models.
-    - `model_trainer.py`: Trains the SVM and XGBoost models.
+    - `model_trainer.py`: Trains the and XGBoost models.
+    - `model_evaluation.py`: Evaluates the performance of the machine learning models.    
   - `config/`: Configuration scripts for the components.
   - `constants/`: Defines constants used across the project.
   - `entity/`: Entities or data models used in the project.
   - `pipeline/`: Scripts that orchestrate the execution of the pipeline stages.
 - `utils/`: Utility scripts providing common functions used by various components.
-- `static/`: Static files required for the project, such as CSS for the Streamlit app.
-- `templates/`: HTML templates if used for reporting or visualization.
+- `static/`: Static files required for the project, such as CSS for the web app(flask).
+- `templates/`: HTML templates if used for index.html and result.html.
 - `Dockerfile`: Contains all commands needed to assemble the Docker image for this project.
 - `README.md`: The file you are currently reading, which provides documentation for this repository.
-- `app.py`: The main Python script for running the Streamlit application.
-- `app_stream.py`: A Streamlit-specific version of the application script.
-- `main.py`: Entry point for executing the pipeline.
+- `app.py`: The Python script for running the Web application (flask).
+- `app_stream.py`:The Python script for running a Streamlit application.
+- `main.py`: The main python script for Entry point for executing the pipeline.
 - `poetry.lock` & `pyproject.toml`: Dependency management files used by Poetry.
 - `schema.yaml`: YAML file defining the data schema for validation.
 - `setup.py`: Setup script for installing the project as a package.
