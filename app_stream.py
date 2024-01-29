@@ -150,7 +150,7 @@ The Data Ingestion pipeline in this code efficiently handles data acquisition an
 It automates the downloading of data from a <b>specified API</b>, checking for pre-existing files to avoid redundancy, 
 and then seamlessly extracts the contents of zip files into a designated directory, preparing the data for subsequent processing stages.
 
-2. **Data Validation:** Ensuring the quality and consistency of ingested data against predefined <b>schemas/b>, which is crucial for reliable predictions.
+2. **Data Validation:** Ensuring the quality and consistency of ingested data against predefined <b>schemas</b>, which is crucial for reliable predictions.
 
 3. **Data Transformation:** Cleaning and converting raw data into a format suitable for machine learning algorithms.
 
