@@ -1,10 +1,9 @@
 # SysForecast: What-If Analysis Tool for IT Enterprises
 
 ## Live Application
-The application is deployed and can be accessed on Streamlit Cloud. 
-Experience the live application here: [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)  
-
-Also for [MlFlow experimentation](https://dagshub.com/krunalss/data_it_enterprises.mlflow/)
+The application is deployed and can be accessed on Streamlit Cloud. <br>
+Experience the live application here: [Streamlit App](https://dataitenterprises-whatif.streamlit.app/)<br>  
+Also link for: [MlFlow experimentation](https://dagshub.com/krunalss/data_it_enterprises.mlflow/)
 
 ## Problem Statement
 In the complex landscape of modern IT systems, accurately predicting server loads during high-demand periods such as Black Friday sales, Great Amazon Sales, and similar events is a significant challenge. These occasions often lead to unprecedented traffic spikes, causing server overloads and potential system downtimes. The interdependencies among various components in IT infrastructure make it difficult to anticipate the effects of workload fluctuations or modifications, often leading to inefficiency and high operational costs. SysForecast addresses these challenges by offering a 'what-if' analysis tool, enabling system administrators to model potential changes and assess their impact on system performance, resource utilization, and server load during peak times. This tool is designed to facilitate informed decision-making and reduce risks in dynamic IT environments.
