@@ -70,16 +70,11 @@ Below is an outline of the key directories and files in this repository, and the
 ## Getting Started
 Running Locally using Docker:
  - Build the Docker image: 
- <pre><code>  docker build -t sysforecast
-  </code> </pre>
+ <pre><code>  docker build -t sysforecast  </code> </pre>
  - Run the Docker container: 
- <pre><code>
- docker run -p 8501:8501 sysforecast
- </code> </pre>
+ <pre><code> docker run -p 8501:8501 sysforecast </code> </pre>
  - Running Locally on Streamlit:
-<pre><code>
- streamlit run app_stream.py
-</code> </pre>
+<pre><code> streamlit run app_stream.py </code> </pre>
 
 ## Contribution
 Your contributions are always welcome! Here's how you can contribute:
